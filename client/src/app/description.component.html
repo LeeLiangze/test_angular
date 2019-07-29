@@ -1,0 +1,95 @@
+<div class="text-lg-center">
+    <p>
+        <a href="https://www.fitforbanking.com/murex/modules.php" target="_top">Murex Modules </a>
+    </p>
+
+</div>
+
+<h1 class="text-center">SKILLSET</h1>
+
+<ng-template #create>
+    <h3 class="text-center"> Rating </h3>
+</ng-template>
+<!--div>
+  <form [formGroup]="recordForm" (ngSubmit)="onRecordFormSubmit()">
+   <table class="table-striped" style="margin:0 auto;">
+     <tr><th>Enter Period To Check</th><td><input formControlName="period"></td>
+ 	       <label *ngIf="recordForm.get('period').invalid && processValidation" [ngClass] = "'error'"> period is required. </label>
+    	</tr>
+     <tr><td colspan="2">
+       <button class="btn btn-default">Check</button>
+       <button class="btn btn-default" *ngIf="resultToEdit" type="button" (click)="loadRecordToEdit(record.id)">Edit</button>
+ 	     </td></tr>
+   </table>
+  </form>
+</div-->
+<br>
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold py-4">Enter Your Rate</h3>
+    <div class="card-body">
+        <div id="table" class="table-editable">
+            <form [formGroup]="descriptionForm" (ngSubmit)="createNewRecord()">
+                <table class="table table-striped text-center" style="margin:0 auto;" *ngIf="allDescriptions" id="table1">
+                    <tr>
+                        <th class="text-center">Skill ID</th>
+                        <th class="text-center">Category</th>
+                        <th class="text-center">Family</th>
+                        <th class="text-center">Set</th>
+                        <th class="text-center">Skill Item</th>
+                        <th class="text-center">Rate</th>
+                    </tr>
+                    <tr *ngFor="let description of allDescriptions">
+                        <td>
+                            <span contenteditable="false">{{description.skill_id}}</span>
+                        </td>
+                        <td>
+                            <span contenteditable="false">{{description.category}}</span>
+                        </td>
+                        <td>
+                            <span contenteditable="false">{{description.family}}</span>
+                        </td>
+                        <td>
+                            <span contenteditable="false">{{description.set}}</span>
+                        </td>
+                        <td>
+                            <span contenteditable="false">{{description.skill_item}}</span>
+                        </td>
+
+                        <td>
+                                    <select size="1" id="rate" name="rate" formControlName="rate" [value]="1">
+                            <option value="0">
+                                0
+                            </option>
+                            <option value="1">
+                                1
+                            </option>
+                            <option value="2">
+                                2
+                            </option>
+                            <option value="3">
+                                3
+                            </option>
+                            <option value="4">
+                                4
+                            </option>
+                        </select>
+        <!--</div></div>-->
+    </td>
+                    </tr>
+                    <br>
+                    <button class="btn btn-info">Submit</button>
+
+                    <!-- this was using editable table, but not sure how to adjust the width and apply controls, need to do some reearch)>
+                       <td>
+                          <span contenteditable="true" (keyup)="changeValue('rate', $event)" (blur)="updateList('rate', $event)">{{record.rating}}</span>
+                      </td-->
+                    <!-- below is using fromc-control but should be tag with edit and delete button on each row. not sure how to submit whole table at once for bulk update and not row by row>
+                       <td>
+                         <input formControlName="rate" type="numbr" class="form-control">
+                       </td-->
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
